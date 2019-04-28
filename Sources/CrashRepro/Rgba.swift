@@ -6,7 +6,7 @@ public extension Rgba64 {
         self.init(.init(value: (UInt64(a) << 48) | (UInt64(r) << 32) | (UInt64(g) << 16) | UInt64(b)))
     }
 
-    @inlinable
+    @inlinable // Removing this inline annotation appears to correct the crash
     init(rgba32: Rgba32) {
         self.init(r: rgba32.r | (rgba32.r << 8),
                   g: rgba32.g | (rgba32.g << 8),
